@@ -1,7 +1,7 @@
 # ¿Es un hogar de ingreso alto? Pipeline Medallion, modelo y API con la ENIGH 2024
 
 Proyecto final de **Machine Learning for Big Data** (Dr. Ramón Alejandro Briseño Martínez).
-Autora: Carolina · Maestría en Ingeniería (Ciencia de Datos), Universidad Panamericana.
+Autora: Carolina Hurtado Arias · Maestría en Ingeniería (Ciencia de Datos), Universidad Panamericana.
 
 Proyecto individual. Toma los microdatos de la **ENIGH 2024** (INEGI) y construye, en Databricks, un pipeline por capas (bronce, plata y oro) con Spark, entrena un modelo de clasificación, lo publica como endpoint REST y lo consulta desde una app web.
 
