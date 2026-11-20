@@ -25,6 +25,13 @@ EDUCA = {1: "Sin instrucción", 2: "Preescolar", 3: "Primaria incompleta", 4: "P
          5: "Secundaria incompleta", 6: "Secundaria completa", 7: "Preparatoria incompleta",
          8: "Preparatoria completa", 9: "Profesional incompleta", 10: "Profesional completa", 11: "Posgrado"}
 
+ENTIDADES = {1: "Aguascalientes", 2: "Baja California", 3: "Baja California Sur", 4: "Campeche",
+             5: "Coahuila", 6: "Colima", 7: "Chiapas", 8: "Chihuahua", 9: "Ciudad de México",
+             10: "Durango", 11: "Guanajuato", 12: "Guerrero", 13: "Hidalgo", 14: "Jalisco",
+             15: "Estado de México", 16: "Michoacán", 17: "Morelos", 18: "Nayarit", 19: "Nuevo León",
+             20: "Oaxaca", 21: "Puebla", 22: "Querétaro", 23: "Quintana Roo", 24: "San Luis Potosí",
+             25: "Sinaloa", 26: "Sonora", 27: "Tabasco", 28: "Tamaulipas", 29: "Tlaxcala",
+             30: "Veracruz", 31: "Yucatán", 32: "Zacatecas"}
 
 def falla(mensaje, cuerpo, r=None):
     return {"ok": False, "error": mensaje, "peticion": cuerpo,
@@ -81,7 +88,7 @@ if not TOKEN:
 with st.form("hogar"):
     st.subheader("Datos del hogar")
     c1, c2 = st.columns(2)
-    entidad = c1.number_input("Entidad federativa (clave 1 a 32)", 1, 32, 14)
+    entidad = c1.selectbox("Entidad federativa", list(ENTIDADES), index=13, format_func=lambda k: ENTIDADES[k])
     tam_loc = c2.selectbox("Tamaño de localidad", list(TAM_LOC), index=0, format_func=lambda k: TAM_LOC[k])
     est_socio = c1.selectbox("Estrato socioeconómico", list(EST_SOCIO), index=2, format_func=lambda k: EST_SOCIO[k])
     clase_hog = c2.selectbox("Clase de hogar", list(CLASE_HOG), index=1, format_func=lambda k: CLASE_HOG[k])
